@@ -5,4 +5,8 @@ import org.springframework.data.mongodb.repository.MongoRepository
 import org.springframework.stereotype.Repository
 
 @Repository
-interface CoordinateRepository : MongoRepository<Coordinate, String>
+interface CoordinateRepository : MongoRepository<Coordinate, String> {
+
+    fun findByOrderId(orderId : String) : List<Coordinate>
+
+}
