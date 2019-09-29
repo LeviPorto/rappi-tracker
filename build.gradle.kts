@@ -26,6 +26,8 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("org.springframework.cloud:spring-cloud-starter-netflix-eureka-client")
     implementation("org.springframework.kafka:spring-kafka")
+    implementation ("org.springframework.data:spring-data-redis")
+    implementation ("redis.clients:jedis:2.9.0")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
