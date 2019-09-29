@@ -9,5 +9,7 @@ data class Coordinate (
         val speed: Double,
         val date: Instant,
         val deliveryManId: Int,
+        val latitude : Double,
+        val longitude : Double,
         @Id val id: String? = null
 )
