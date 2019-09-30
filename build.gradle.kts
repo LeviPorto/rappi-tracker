@@ -28,6 +28,7 @@ dependencies {
     implementation("org.springframework.kafka:spring-kafka")
     implementation ("org.springframework.data:spring-data-redis")
     implementation ("redis.clients:jedis:2.9.0")
+    implementation("com.h2database:h2")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 

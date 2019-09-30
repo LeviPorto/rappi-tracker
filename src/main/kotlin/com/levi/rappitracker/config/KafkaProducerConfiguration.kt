@@ -1,6 +1,6 @@
 package com.levi.rappitracker.config
 
-import com.levi.rappitracker.domain.Coordinate
+import com.levi.rappitracker.dto.CoordinateDTO
 import org.apache.kafka.clients.producer.ProducerConfig
 import org.apache.kafka.common.serialization.StringSerializer
 import org.springframework.beans.factory.annotation.Value
@@ -16,7 +16,7 @@ import java.util.HashMap
 class KafkaProducerConfiguration {
 
     @Value("\${spring.kafka.bootstrap-servers}")
-    var bootstrapServer: String? = null
+    val bootstrapServer: String? = null
 
     @Bean
     fun producerConfigs(): Map<String, Any> {
@@ -29,12 +29,12 @@ class KafkaProducerConfiguration {
     }
 
     @Bean
-    fun producerFactory(): ProducerFactory<String, Coordinate> {
+    fun producerFactory(): ProducerFactory<String, CoordinateDTO> {
         return DefaultKafkaProducerFactory(producerConfigs())
     }
 
     @Bean
-    fun kafkaTemplate(): KafkaTemplate<String, Coordinate> {
+    fun kafkaTemplate(): KafkaTemplate<String, CoordinateDTO> {
         return KafkaTemplate(producerFactory())
     }
 }
